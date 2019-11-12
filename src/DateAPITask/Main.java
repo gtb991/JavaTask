@@ -1,10 +1,9 @@
 package DateAPITask;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class Main {
     public static int getDayOfWeek() {
@@ -42,8 +41,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        TimeZone.getTimeZone();
+
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
-        LocalTime nowFlight = LocalTime.parse("11:15").minusHours(6);
+        OffsetTime start = OffsetTime.parse("11:15 LA");
+        LocalTime nowFlight = LocalTime.parse("11:15").minusHours(6); nowFlight.atOffset(ZoneOffset.of("LA"));
+
         System.out.println("What is the duration of the flight? Duration of flight is:  " + dateTimeFormatter.format(nowFlight));
 
 //        Task 2 What day of the week was it released?
