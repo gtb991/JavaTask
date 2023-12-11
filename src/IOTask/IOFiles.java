@@ -12,8 +12,8 @@ public class IOFiles {
         FileWriter out = null;
 
         try {
-            in = new FileReader(new File("C:\\javaxAutomation\\inPut.txt"));
-            out = new FileWriter("C:\\javaxAutomation\\outPut.txt");
+            in = new FileReader(new File("C:\\projects\\JavaTask\\src\\IOTask\\text.txt"));
+            out = new FileWriter("C:\\projects\\JavaTask\\src\\IOTask\\textout.txt");
 
             int c;
             while ((c = in.read()) != -1) {
